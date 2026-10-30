@@ -1,0 +1,2353 @@
+/* ========================================================= */
+/* CONFIGURACIÓN GENERAL                                     */
+/* ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #eeeeee;
+
+    color: #222;
+
+    overflow: hidden;
+
+}
+
+
+
+/* ========================================================= */
+/* IMÁGENES - TAMAÑO Y PROPORCIÓN                            */
+/* ========================================================= */
+
+/* Evita que las imágenes normales se deformen */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* Imágenes dentro de tarjetas */
+.tarjeta-informacion img,
+.tarjeta-himno img,
+.ficha-informacion img,
+.resultado-busqueda img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    max-height: 350px;
+    object-fit: contain;
+    margin: 15px auto;
+    border-radius: 10px;
+}
+
+/* Si una imagen necesita ocupar un espacio fijo,
+   mantiene su proporción sin deformarse */
+.imagen-ajustada {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    display: block;
+    margin: 15px auto;
+}
+
+/* Para imágenes que deban llenar completamente el espacio.
+   Puede recortar los bordes, pero NO las deforma. */
+.imagen-portada {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Imágenes pequeñas */
+.imagen-pequena {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin: 10px auto;
+}
+
+/* Imágenes medianas */
+.imagen-mediana {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    margin: 10px auto;
+}
+
+/* Imágenes grandes */
+.imagen-grande {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    object-fit: contain;
+    margin: 15px auto;
+}
+
+/* En celulares */
+@media (max-width: 800px) {
+
+    .tarjeta-informacion img,
+    .tarjeta-himno img,
+    .ficha-informacion img,
+    .resultado-busqueda img {
+        max-width: 100%;
+        max-height: 280px;
+    }
+
+    .imagen-ajustada {
+        height: 220px;
+    }
+
+    .imagen-portada {
+        height: 220px;
+    }
+
+    .imagen-mediana {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* ========================================================= */
+/* ENCABEZADO                                                 */
+/* ========================================================= */
+
+.header {
+
+    height: 90px;
+
+    background-image:
+        url("Assets/imagenes/1.png");
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+    background-position: center;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: white;
+
+    border-bottom:
+        3px solid #c62828;
+
+}
+
+
+.titulo-principal {
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* ========================================================= */
+/* BARRA SUPERIOR                                             */
+/* ========================================================= */
+
+.barra-opciones {
+
+    height: 60px;
+    background-image: url(Assets/imagenes/4.1.png);
+    
+    /* Mantiene la proporción de la imagen */
+    background-size: cover;
+
+    /* Centra la imagen */
+    background-position: center;
+
+    /* Evita que se repita */
+    background-repeat: no-repeat;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    border-bottom:
+        1px solid #cccccc;
+
+    box-shadow:
+        0 2px 6px
+        rgba(0, 0, 0, 0.12);
+
+}
+
+
+.barra-opciones button {
+
+    height: 42px;
+
+    padding:
+        0 25px;
+
+    background:
+        transparent;
+
+    border: none;
+
+    border-radius: 6px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    color: white;
+
+    font-weight: bold;
+
+    transition:
+        0.25s;
+
+}
+
+
+.barra-opciones button:hover {
+
+    background:
+       rgba(77, 27, 7, 0.603);
+
+    color: white;
+
+}
+
+
+/* ========================================================= */
+/* CONTENEDOR PRINCIPAL                                       */
+/* ========================================================= */
+
+.contenedor {
+
+    height:
+        calc(100vh - 130px);
+
+    display: flex;
+
+}
+
+
+/* ========================================================= */
+/* MENÚ LATERAL                                               */
+/* ========================================================= */
+
+.menu-lateral {
+
+    width: 240px;
+    min-width: 240px;
+
+    background-image: url("Assets/imagenes/3.jpeg");
+
+    /* Mantiene la proporción de la imagen */
+    background-size: cover;
+
+    /* Centra la imagen */
+    background-position: center;
+
+    /* Evita que se repita */
+    background-repeat: no-repeat;
+
+    border-right:
+        1px solid #cccccc;
+
+    padding:
+        25px 15px;
+
+    overflow-y: auto;
+    
+}
+
+
+.menu-lateral h2 {
+
+    color:
+        white;
+
+    font-size: 18px;
+
+    margin-bottom: 20px;
+
+    padding-left: 10px;
+
+}
+
+
+.menu-lateral button {
+
+    width: 100%;
+
+    padding:
+        15px 12px;
+
+    margin-bottom: 8px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background:
+        transparent;
+
+    color:white;
+
+    text-align: left;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition:
+        0.25s;
+
+}
+
+
+.menu-lateral button:hover {
+
+    background:
+        rgba(77, 27, 7, 0.603);
+
+    color: white;
+
+    transform:
+        translateX(4px);
+
+}
+
+
+/* ========================================================= */
+/* CONTENIDO                                                   */
+/* ========================================================= */
+
+.contenido {
+
+    flex: 1;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* ========================================================= */
+/* PANTALLAS                                                   */
+/* ========================================================= */
+
+.pantalla {
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    padding: 50px;
+
+    display: none;
+
+    overflow-y: auto;
+
+}
+
+
+.pantalla.activa {
+
+    display: block;
+
+}
+
+
+/* ========================================================= */
+/* INICIO                                                      */
+/* ========================================================= */
+
+#inicio {
+
+    padding: 0;
+
+    background:
+
+        linear-gradient(
+            rgba(0, 0, 0, 0.42),
+            rgba(0, 0, 0, 0.42)
+        ),
+
+        url("Assets/imagenes/2.jpeg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+}
+
+
+.presentacion {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    color: white;
+
+}
+
+
+.bandera {
+
+    font-size: 65px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.presentacion h1 {
+
+    font-size: 52px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 5px;
+
+    text-shadow:
+        2px 2px 5px black;
+
+}
+
+
+.presentacion h2 {
+
+    font-size: 34px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        2px 2px 5px black;
+
+}
+
+
+.presentacion p {
+
+    max-width: 600px;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* ========================================================= */
+/* BOTÓN COMENZAR                                              */
+/* ========================================================= */
+
+.boton-comenzar {
+
+    padding:
+        14px 35px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background:
+        #c62828;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        0.3s;
+
+}
+
+
+.boton-comenzar:hover {
+
+    background:
+        #9e1e1e;
+
+    transform:
+        scale(1.05);
+
+}
+
+
+/* ========================================================= */
+/* TÍTULOS                                                     */
+/* ========================================================= */
+
+.pantalla:not(#inicio) h1 {
+
+    color:
+        #000000;
+
+    margin-bottom:
+        15px;
+
+    font-size:
+        34px;
+
+}
+
+
+.pantalla:not(#inicio) > p {
+
+    color:
+        #ffffff;
+
+    font-size:
+        17px;
+
+}
+
+
+/* ========================================================= */
+/* BUSCADORES INDIVIDUALES                                    */
+/* ========================================================= */
+
+.buscador-seccion {
+    width: 100%;
+    max-width: 900px;
+    margin:25px auto;
+    background: rgba(255, 255, 255, 0.678);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow:0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+.buscador-seccion input {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #174a8b;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+}
+
+.buscador-seccion input:focus {
+    border-color:
+        #4028c6;
+
+}
+
+
+/* ========================================================= */
+/* RESULTADOS                                                 */
+/* ========================================================= */
+
+.resultados-seccion {
+    width: 100%;
+    max-width: 900px;
+    margin:20px auto;
+}
+
+.mensaje-seccion {
+    background: rgba(0, 0, 0, 0.637);
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    color: #fffcfc;
+
+}
+
+
+.tarjeta-informacion {
+    background: rgba(255, 255, 255, 0.651);
+    padding: 22px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    box-shadow:
+        0 3px 10px
+        rgba(0, 0, 0, 0.12);
+}
+
+
+.tarjeta-informacion h2 {
+    color:#174a8b;
+    margin-bottom:12px;
+}
+
+.tarjeta-informacion p {
+    margin-bottom:10px;
+    line-height:1.6;
+}
+
+.tarjeta-informacion button {
+    padding:10px 18px;
+    border: none;
+    border-radius: 7px;
+    background:#174a8b;
+    color: rgba(255, 255, 255, 0.692);
+    cursor: pointer;
+
+}
+.tarjeta-informacion button:hover {
+    background:#174a8b;
+}
+
+/* ========================================================= */
+/* FICHA                                                       */
+/* ========================================================= */
+.ficha-informacion {
+    background: rgba(255, 255, 255, 0.74);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow:0 4px 15px rgba(0, 0, 0, 0.15);
+}
+.ficha-informacion h2 {
+    color: #174a8b;
+    font-size: 30px;
+    margin: 20px 0;
+}
+.ficha-informacion h3 {
+    color: #174a8b;
+    margin-top:20px;
+    margin-bottom:8px;
+}
+.ficha-informacion p {
+    line-height:1.7;
+    margin-bottom:10px;
+}
+.ficha-informacion hr {
+    border: none;
+    border-top:
+        1px solid #ddd;
+    margin: 15px 0;
+}
+.ficha-informacion audio {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* ========================================================= */
+/* VOLVER                                                       */
+/* ========================================================= */
+
+.boton-volver {
+    border: none;
+    padding:10px 16px;
+    border-radius: 7px;
+    background: #eeeeeedc;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
+.boton-volver:hover {
+    background: #174a8b;
+    color:rgba(255, 255, 255, 0.705);
+}
+/* ========================================================= */
+/* MENÚ DE MÚSICA                                              */
+/* ========================================================= */
+
+.ventana-musica {
+    position: fixed;
+    top: 135px;
+    right: 20px;
+    width: 300px;
+    max-height: 500px;
+    overflow-y: auto;
+    background: rgba(70, 8, 105, 0.562);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow:0 6px 20px rgba(0, 0, 0, 0.25);
+    z-index: 2000;
+    display: none;
+}
+
+.ventana-musica.mostrar {
+    display: block;
+}
+
+.ventana-musica h3 {
+    text-align: center;
+    color:white;
+    margin-bottom:15px;
+}
+
+.ventana-musica > button {
+    width: 100%;
+    padding: 11px;
+    margin-bottom: 5px;
+    border: none;
+    border-radius: 5px;
+    background:#000000a9;
+    text-align: left;
+    cursor: pointer;
+    color:white;
+}
+.ventana-musica > button:hover {
+    background:
+        #6814adc4;
+    color: white;
+}
+.controles-musica {
+    display: flex;
+    gap: 5px;
+    margin:15px 0;
+}
+.controles-musica button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.ventana-musica p {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+.ventana-musica input {
+    width: 100%;
+    font-size: 12px;
+}
+/* ========================================================= */
+/* AJUSTES                                               */
+/* ========================================================= */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+}
+
+.modal.mostrar {
+    display: flex;
+}
+.modal-contenido {
+
+    width: 90%;
+
+    max-width: 500px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: rgba(255, 255, 255, 0.705);
+
+    padding: 35px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    position: relative;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.3);
+
+}
+
+
+.modal-contenido h2 {
+    color:#04118b;
+    margin-bottom: 20px;
+}
+
+
+.modal-contenido p {
+    margin:10px 0;
+    line-height: 1.5;
+}
+
+.modal-contenido input {
+    width: 100%;
+    padding: 12px;
+    border:1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.modal-contenido select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+}
+
+
+.cerrar {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* ========================================================= */
+/* RESULTADOS BUSCADOR GENERAL                                */
+/* ========================================================= */
+#resultadosBusqueda {
+    margin-top:15px;
+    text-align:left;
+}
+.resultado-busqueda {
+    background:#f1f1f1b2;
+    padding:12px;
+    margin-bottom:8px;
+    border-radius:7px;
+    cursor:pointer;
+    transition:0.2s;
+}
+.resultado-busqueda:hover {
+
+    background:
+        #9c0d0dc4;
+
+    color:
+        white;
+
+    transform:
+        translateX(4px);
+
+}
+
+
+.resultado-busqueda strong {
+
+    display:
+        block;
+
+    font-size:
+        16px;
+
+    margin-bottom:
+        4px;
+
+}
+
+
+.resultado-busqueda span {
+
+    font-size:
+        13px;
+
+    color:
+        #666;
+
+}
+
+
+.resultado-busqueda:hover span {
+
+    color:
+        white;
+
+}
+
+
+.sin-resultados {
+
+    text-align:
+        center;
+
+    padding:
+        15px;
+
+    color:
+        #777;
+
+}
+
+
+/* ========================================================= */
+/* HIMNOS Y CANCIONES                                         */
+/* ========================================================= */
+
+.contenedor-himnos {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin:
+        25px auto;
+
+}
+
+
+.buscador-himnos {
+
+    background: rgba(255, 255, 255, 0.637);
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 3px 10px
+        rgba(0, 0, 0, 0.15);
+
+}
+
+
+#buscarHimno {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border:
+        2px solid #b9510ce1;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    outline: none;
+
+}
+
+
+#buscarHimno:focus {
+
+    border-color:
+        #c62828e0;
+
+}
+
+
+.resultados-himnos {
+
+    margin-top:
+        20px;
+
+}
+
+
+.tarjeta-himno {
+
+    background: rgba(255, 255, 255, 0.616);
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    margin-bottom: 15px;
+
+    box-shadow:
+        0 3px 10px
+        rgba(0, 0, 0, 0.12);
+
+}
+
+
+.tarjeta-himno h2 {
+
+    color:
+        #8b1717;
+
+    margin-bottom:
+        8px;
+
+}
+
+
+.tarjeta-himno p {
+
+    margin-bottom:
+        8px;
+
+    line-height:
+        1.5;
+
+}
+
+
+.categoria-himno {
+    display:inline-block;
+    background:#eeeeeea4;
+    padding:5px 10px;
+    border-radius:15px;
+    font-size:13px;
+    margin-bottom:10px;
+}
+
+
+.audio-himno {
+
+    margin-top:
+        15px;
+
+}
+
+
+.audio-himno audio {
+
+    width:
+        100%;
+
+}
+
+
+.mensaje-himnos {
+    background:rgba(0, 0, 0, 0.719);
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+    color:#fdfdfd;
+}
+.sin-himnos {
+    background:
+        rgba(204, 19, 19, 0.788);
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+    color: #777;
+}
+/* ========================================================= */
+/* AUDIO CONSULTAS                                             */
+/* ========================================================= */
+
+.opcion-audio {
+
+    display:
+        block;
+
+    margin-top:
+        20px;
+
+    margin-bottom:
+        5px;
+
+    font-weight:
+        bold;
+
+    color:
+        #333;
+
+}
+
+
+/* ========================================================= */
+/* TAMAÑO DEL TEXTO                                            */
+/* ========================================================= */
+
+body.texto-grande {
+
+    font-size:
+        18px;
+
+}
+
+
+body.muy-grande {
+
+    font-size:
+        21px;
+
+}
+
+
+/* ========================================================= */
+/* RESPONSIVE                                                  */
+/* ========================================================= */
+
+@media (max-width: 800px) {
+
+    body {
+
+        overflow:
+            auto;
+
+    }
+
+
+    .header {
+
+        height:
+            60px;
+
+    }
+
+
+    .titulo-principal {
+
+        font-size:
+            22px;
+
+    }
+
+
+    .barra-opciones {
+
+        height:
+            auto;
+
+        padding:
+            5px;
+
+        flex-wrap:
+            wrap;
+
+    }
+
+
+    .barra-opciones button {
+
+        padding:
+            8px 12px;
+
+        font-size:
+            13px;
+
+    }
+
+
+    .contenedor {
+
+        height:
+            auto;
+
+        min-height:
+            calc(100vh - 110px);
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .menu-lateral {
+
+        width:
+            100%;
+
+        min-width:
+            100%;
+
+        padding:
+            10px;
+
+        border-right:
+            none;
+
+        border-bottom:
+            1px solid #ccc;
+
+    }
+
+
+    .menu-lateral h2 {
+
+        margin-bottom:
+            5px;
+
+    }
+
+
+    .menu-lateral button {
+
+        display:
+            inline-block;
+
+        width:
+            auto;
+
+        margin:
+            3px;
+
+        padding:
+            9px;
+
+        font-size:
+            13px;
+
+    }
+
+
+    .contenido {
+
+        min-height:
+            600px;
+
+    }
+
+
+    .pantalla {
+
+        padding:
+            25px 15px;
+
+    }
+
+
+    .presentacion h1 {
+
+        font-size:
+            35px;
+
+    }
+
+
+    .presentacion h2 {
+
+        font-size:
+            23px;
+
+    }
+
+
+    .presentacion p {
+
+        font-size:
+            15px;
+
+        padding:
+            0 20px;
+
+    }
+
+
+    .ventana-musica {
+
+        top:
+            115px;
+
+        right:
+            10px;
+
+        width:
+            280px;
+
+    }
+
+}
+/* ========================================================= */
+/* BOTÓN DEL CONCURSO                                        */
+/* ========================================================= */
+
+.boton-concurso {
+
+    width: 100%;
+
+    min-height: 85px;
+
+    padding: 12px 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    text-decoration: none;
+
+    color: white;
+
+    background:linear-gradient(180deg,#1d5ca8,#0a2d63);
+    border:2px solid #f5c542;
+    border-radius: 10px;
+    box-shadow:
+        0 4px 0 #061b3d,
+        0 0 12px rgba(245, 197, 66, 0.25);
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s,
+        background 0.2s;
+}
+
+
+/* Icono */
+
+.icono-concurso {
+
+    font-size: 28px;
+
+    flex-shrink: 0;
+
+}
+
+
+/* Texto */
+
+.texto-concurso {
+
+    flex: 1;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    line-height: 1.3;
+
+    text-align: center;
+
+}
+
+
+.texto-concurso strong {
+
+    display: block;
+
+    color: #ffd83d;
+
+    font-size: 16px;
+
+    margin-top: 3px;
+
+}
+
+
+/* Flecha */
+
+.flecha-concurso {
+
+    font-size: 18px;
+
+    color: #ffd83d;
+
+    flex-shrink: 0;
+
+}
+
+
+/* Efecto al pasar el mouse */
+
+.boton-concurso:hover {
+
+    transform:
+        translateX(5px)
+        scale(1.02);
+
+    background:
+        linear-gradient(
+            180deg,
+            #2878d0,
+            #12498e
+        );
+
+    box-shadow:
+        0 4px 0 #061b3d,
+        0 0 20px rgba(255, 215, 60, 0.7);
+
+}
+
+
+/* Efecto al presionar */
+
+.boton-concurso:active {
+
+    transform:
+        translateX(5px)
+        translateY(3px);
+
+    box-shadow:
+        0 1px 0 #061b3d;
+
+}
+/* ========================================================= */
+/* BOTÓN DEL ARCHIVO SECRETO                                  */
+/* ========================================================= */
+
+.boton-secreto {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 7px;
+    background: #222;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.boton-secreto:hover {
+
+    background: #000000;
+
+    transform: scale(1.03);
+
+}
+
+#mensajeSecreto {
+
+    margin-top: 15px;
+
+    color: #000000;
+
+    font-weight: bold;
+
+}
+
+
+/* ========================================================= */
+/* ADAPTACIÓN ESPECIAL YUYAY BOLIVIA - 356 x 557             */
+/* Conserva TODO el contenido original.                      */
+/* ========================================================= */
+
+@media (max-width: 600px) {
+
+    html, body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .header {
+        height: 48px;
+    }
+
+    .titulo-principal {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+
+    .barra-opciones {
+        height: 48px;
+        padding: 3px 4px;
+        gap: 3px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .barra-opciones button {
+        height: 36px;
+        min-width: max-content;
+        padding: 0 8px;
+        font-size: 11px;
+    }
+
+    .contenedor {
+        height: auto;
+        min-height: calc(100vh - 96px);
+        flex-direction: column;
+    }
+
+    .menu-lateral {
+        width: 100%;
+        min-width: 100%;
+        box-sizing: border-box;
+        padding: 6px;
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .menu-lateral h2 {
+        font-size: 14px;
+        margin: 2px 0 5px;
+    }
+
+    .menu-lateral button {
+        display: inline-block;
+        width: auto;
+        margin: 2px;
+        padding: 6px 8px;
+        font-size: 11px;
+        border-radius: 5px;
+    }
+
+    /* Reality Show: más pequeño especialmente en celular */
+    .boton-concurso {
+        width: calc(100% - 6px);
+        min-height: 52px;
+        box-sizing: border-box;
+        padding: 6px 7px;
+        gap: 5px;
+        margin: 3px;
+        border-width: 1px;
+        border-radius: 7px;
+        box-shadow: 0 2px 0 #061b3d;
+    }
+
+    .icono-concurso {
+        font-size: 20px;
+    }
+
+    .texto-concurso {
+        font-size: 9px;
+        line-height: 1.15;
+    }
+
+    .texto-concurso strong {
+        font-size: 11px;
+        margin-top: 1px;
+    }
+
+    .flecha-concurso {
+        font-size: 13px;
+    }
+
+    .contenido {
+        width: 100%;
+        min-height: 0;
+        box-sizing: border-box;
+    }
+
+    .pantalla {
+        padding: 15px 9px;
+        box-sizing: border-box;
+    }
+
+    .pantalla h1 {
+        font-size: 21px;
+        line-height: 1.2;
+    }
+
+    .pantalla p {
+        font-size: 13px;
+    }
+
+    .presentacion h1 {
+        font-size: 27px;
+    }
+
+    .presentacion h2 {
+        font-size: 18px;
+    }
+
+    .presentacion p {
+        font-size: 13px;
+        padding: 0 8px;
+    }
+
+    .boton-comenzar {
+        padding: 9px 18px;
+        font-size: 13px;
+    }
+
+    /* Ventana de Música */
+    .ventana-musica {
+        top: 101px;
+        right: 6px;
+        width: 190px;
+        max-width: calc(100vw - 12px);
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .ventana-musica h3 {
+        font-size: 15px;
+        margin: 3px 0 7px;
+    }
+
+    /* Temas de Música: botones más pequeños */
+    .ventana-musica > button {
+        width: 100%;
+        padding: 5px 7px;
+        margin: 2px 0;
+        font-size: 11px;
+        min-height: 28px;
+    }
+
+    .controles-musica {
+        gap: 4px;
+        margin: 7px 0;
+    }
+
+    .controles-musica button {
+        padding: 6px;
+        font-size: 11px;
+    }
+
+    .ventana-musica p {
+        font-size: 11px;
+        margin: 5px 0;
+    }
+
+    .ventana-musica input {
+        font-size: 10px;
+    }
+
+    .modal-contenido {
+        width: 92%;
+        max-width: 330px;
+        max-height: 88vh;
+        padding: 20px 14px;
+        box-sizing: border-box;
+    }
+
+    .modal-contenido h2 {
+        font-size: 19px;
+        margin-bottom: 12px;
+    }
+
+    .modal-contenido p {
+        font-size: 12px;
+    }
+
+    .modal-contenido input,
+    .modal-contenido select {
+        padding: 9px;
+        font-size: 12px;
+        box-sizing: border-box;
+    }
+
+    .cerrar {
+        top: 7px;
+        right: 8px;
+        font-size: 18px;
+    }
+
+    #buscarHimno {
+        padding: 10px;
+        font-size: 13px;
+        box-sizing: border-box;
+    }
+
+    .buscador-himnos {
+        padding: 10px;
+    }
+
+    .tarjeta-himno {
+        padding: 12px;
+    }
+}
+
+/* ========================================================= */
+/* 356 x 557 - VERTICAL                                      */
+/* ========================================================= */
+
+@media (max-width: 370px) and (orientation: portrait) {
+
+    .header {
+        height: 45px;
+    }
+
+    .titulo-principal {
+        font-size: 17px;
+    }
+
+    .barra-opciones {
+        height: 44px;
+    }
+
+    .barra-opciones button {
+        height: 33px;
+        padding: 0 7px;
+        font-size: 10px;
+    }
+
+    .menu-lateral {
+        padding: 5px;
+    }
+
+    .menu-lateral button {
+        padding: 5px 7px;
+        font-size: 10px;
+    }
+
+    .boton-concurso {
+        min-height: 48px;
+        padding: 5px 6px;
+    }
+
+    .icono-concurso {
+        font-size: 18px;
+    }
+
+    .texto-concurso {
+        font-size: 8px;
+    }
+
+    .texto-concurso strong {
+        font-size: 10px;
+    }
+
+    .flecha-concurso {
+        font-size: 11px;
+    }
+
+    .ventana-musica {
+        width: 175px;
+        top: 94px;
+    }
+
+    .ventana-musica > button {
+        padding: 4px 6px;
+        font-size: 10px;
+        min-height: 26px;
+    }
+
+    .pantalla {
+        padding: 12px 7px;
+    }
+}
+
+/* ========================================================= */
+/* 356 x 557 - HORIZONTAL                                    */
+/* ========================================================= */
+
+@media (max-width: 600px) and (orientation: landscape) {
+
+    .header {
+        height: 38px;
+    }
+
+    .titulo-principal {
+        font-size: 16px;
+    }
+
+    .barra-opciones {
+        height: 40px;
+    }
+
+    .barra-opciones button {
+        height: 31px;
+        font-size: 10px;
+        padding: 0 7px;
+    }
+
+    .contenedor {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .menu-lateral {
+        width: 105px;
+        min-width: 105px;
+        height: calc(100vh - 78px);
+        overflow-y: auto;
+        overflow-x: hidden;
+        white-space: normal;
+        padding: 5px;
+        border-right: 1px solid #ccc;
+        border-bottom: none;
+    }
+
+    .menu-lateral h2 {
+        font-size: 11px;
+    }
+
+    .menu-lateral button {
+        display: block;
+        width: 100%;
+        margin: 2px 0;
+        padding: 5px;
+        font-size: 9px;
+    }
+
+    .boton-concurso {
+        width: 100%;
+        min-height: 45px;
+        margin: 3px 0;
+        padding: 4px;
+        gap: 3px;
+    }
+
+    .icono-concurso {
+        font-size: 16px;
+    }
+
+    .texto-concurso {
+        font-size: 7px;
+    }
+
+    .texto-concurso strong {
+        font-size: 8px;
+    }
+
+    .flecha-concurso {
+        font-size: 10px;
+    }
+
+    .contenido {
+        min-width: 0;
+        overflow-x: hidden;
+    }
+
+    .pantalla {
+        padding: 10px;
+    }
+
+    .pantalla h1 {
+        font-size: 18px;
+    }
+
+    .pantalla p {
+        font-size: 11px;
+    }
+
+    .ventana-musica {
+        top: 83px;
+        right: 5px;
+        width: 165px;
+        padding: 7px;
+    }
+
+    .ventana-musica > button {
+        padding: 4px 5px;
+        font-size: 9px;
+        min-height: 24px;
+    }
+
+    .controles-musica button {
+        padding: 4px;
+    }
+}
+
+
+/* ========================================================= */
+/* CORRECCIÓN FINAL PARA 356 x 557                            */
+/* ========================================================= */
+
+@media (max-width: 600px) {
+
+    /* Evita que el contenido de inicio se salga */
+    #inicio {
+        overflow: hidden;
+    }
+
+    /* El texto de bienvenida original era de 65px */
+    .bandera {
+        font-size: 27px !important;
+        line-height: 1.1;
+        margin-bottom: 4px;
+        max-width: 100%;
+    }
+
+    .presentacion {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 8px;
+    }
+
+    .presentacion h1 {
+        font-size: 27px !important;
+        letter-spacing: 2px;
+        line-height: 1.15;
+        margin: 4px 0;
+    }
+
+    .presentacion h2 {
+        font-size: 17px !important;
+        letter-spacing: 1px;
+        line-height: 1.2;
+        margin: 3px 0 10px;
+    }
+
+    .presentacion p {
+        font-size: 12px !important;
+        line-height: 1.35;
+        max-width: 320px;
+        margin: 0 0 12px;
+        padding: 0;
+    }
+
+    .boton-comenzar {
+        padding: 8px 18px;
+        font-size: 13px;
+    }
+
+    /*
+       Menú lateral móvil:
+       todos los botones permanecen en una sola fila
+       y se pueden desplazar horizontalmente.
+    */
+    .menu-lateral {
+        height: 82px;
+        min-height: 82px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        padding: 5px 6px;
+    }
+
+    .menu-lateral h2 {
+        display: none;
+    }
+
+    .menu-lateral button {
+        flex: 0 0 auto;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        min-height: 30px;
+        margin: 0;
+        padding: 5px 7px;
+        font-size: 10px;
+        white-space: nowrap;
+    }
+
+    /* Reality Show: pequeno, mas totalmente visível */
+    .menu-lateral .boton-concurso {
+        flex: 0 0 155px;
+        display: inline-flex;
+        width: 155px;
+        min-width: 155px;
+        min-height: 42px;
+        height: 42px;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 4px 5px;
+        gap: 3px;
+        white-space: normal;
+        border-width: 1px;
+        border-radius: 6px;
+        box-shadow: 0 2px 0 #061b3d;
+    }
+
+    .menu-lateral .icono-concurso {
+        font-size: 17px;
+    }
+
+    .menu-lateral .texto-concurso {
+        font-size: 7px;
+        line-height: 1.05;
+    }
+
+    .menu-lateral .texto-concurso strong {
+        font-size: 9px;
+        margin-top: 1px;
+    }
+
+    .menu-lateral .flecha-concurso {
+        font-size: 10px;
+    }
+
+    .contenido {
+        min-height: calc(100vh - 178px);
+        height: calc(100vh - 178px);
+    }
+
+    .pantalla {
+        box-sizing: border-box;
+        height: 100%;
+        min-height: 0;
+    }
+}
+
+@media (max-width: 370px) and (orientation: portrait) {
+
+    .menu-lateral {
+        height: 78px;
+        min-height: 78px;
+    }
+
+    .menu-lateral button {
+        font-size: 9px;
+        padding: 5px 6px;
+    }
+
+    .menu-lateral .boton-concurso {
+        flex-basis: 145px;
+        width: 145px;
+        min-width: 145px;
+        height: 40px;
+        min-height: 40px;
+    }
+
+    .bandera {
+        font-size: 25px !important;
+    }
+
+    .presentacion h1 {
+        font-size: 25px !important;
+    }
+
+    .presentacion h2 {
+        font-size: 16px !important;
+    }
+
+    .presentacion p {
+        font-size: 11px !important;
+    }
+}
+
+@media (max-width: 600px) and (orientation: landscape) {
+
+    .menu-lateral {
+        height: calc(100vh - 78px);
+        min-height: 0;
+        width: 105px;
+        min-width: 105px;
+        display: block;
+        overflow-x: hidden;
+        overflow-y: auto;
+        white-space: normal;
+        padding: 5px;
+    }
+
+    .menu-lateral button {
+        display: block;
+        width: 100%;
+        min-height: 27px;
+        margin: 2px 0;
+        font-size: 8px;
+    }
+
+    .menu-lateral .boton-concurso {
+        display: flex;
+        width: 100%;
+        min-width: 0;
+        height: 40px;
+        min-height: 40px;
+        margin-top: 3px;
+    }
+
+    .contenido {
+        height: calc(100vh - 78px);
+        min-height: 0;
+    }
+
+    .bandera {
+        font-size: 22px !important;
+    }
+
+    .presentacion h1 {
+        font-size: 23px !important;
+    }
+
+    .presentacion h2 {
+        font-size: 15px !important;
+    }
+
+    .presentacion p {
+        font-size: 10px !important;
+        margin-bottom: 7px;
+    }
+
+    .boton-comenzar {
+        padding: 6px 14px;
+        font-size: 11px;
+    }
+}
+
+
+
+#presidentes {
+    background-image:
+        url("Assets/imagenes/presidentes.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#departamentos {
+    background-image:
+        url("Assets/imagenes/departamentos.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#personajes {
+    background-image:
+        url("Assets/imagenes/importantes.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#culturas {
+    background-image:
+        url("Assets/imagenes/culturas.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#acontecimientos {
+    background-image:
+        url("Assets/imagenes/acontecimientos.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#himnos {
+    background-image:
+        url("Assets/imagenes/himnos.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/* ========================================================= */
+/* LETRA DE HIMNOS                                           */
+/* ========================================================= */
+
+.letra-himno {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 18px;
+    margin-top: 10px;
+
+    background: #f8f8f8;
+    border-radius: 10px;
+
+    white-space: pre-line;
+
+    text-align: left;
+
+    line-height: 1.8;
+
+    font-size: 16px;
+
+    overflow-wrap: anywhere;
+    word-break: normal;
+
+    box-sizing: border-box;
+}
+/* ========================================================= */
+/* AYUDA CON AUDIO                                             */
+/* ========================================================= */
+
+.modal-ayuda {
+    max-width: 520px;
+}
+
+
+.texto-ayuda-intro {
+
+    text-align: center;
+
+    margin-bottom: 20px;
+
+    color: #555;
+
+    line-height: 1.5;
+
+}
+
+
+/* Lista */
+
+.lista-ayuda-audio {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+}
+
+
+/* Cada opción */
+
+.boton-ayuda-audio {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding: 12px 14px;
+
+    background: #f1f1f1c5;
+
+    border-radius: 9px;
+
+    border: 1px solid #ddd;
+
+    transition: 0.2s;
+
+}
+
+
+.boton-ayuda-audio:hover {
+
+    background: #e5e5e5;
+
+    transform: translateX(3px);
+
+}
+
+
+/* Texto */
+
+.boton-ayuda-audio span {
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    color: #333;
+
+}
+
+
+/* Botón de audio */
+
+.boton-ayuda-audio button {
+
+    width: 42px;
+
+    height: 42px;
+
+    min-width: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #174a8b;
+
+    color: white;
+
+    font-size: 19px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.boton-ayuda-audio button:hover {
+
+    background: #c62828;
+
+    transform: scale(1.08);
+
+}
+
+
+/* Reproductor */
+
+.reproductor-ayuda {
+
+    margin-top: 20px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid #ddd;
+
+}
+
+
+.reproductor-ayuda p {
+
+    margin-bottom: 8px;
+
+    font-weight: bold;
+
+    color: #174a8b;
+
+}
+
+
+.reproductor-ayuda audio {
+
+    width: 100%;
+
+}
+
+
+/* Celular */
+
+@media (max-width: 600px) {
+
+    .modal-ayuda {
+
+        width: 94%;
+
+        padding: 20px;
+
+    }
+
+
+    .boton-ayuda-audio {
+
+        padding: 10px;
+
+    }
+
+
+    .boton-ayuda-audio span {
+
+        font-size: 14px;
+
+    }
+
+
+    .boton-ayuda-audio button {
+
+        width: 38px;
+
+        height: 38px;
+
+        min-width: 38px;
+
+        font-size: 17px;
+
+    }
+
+}

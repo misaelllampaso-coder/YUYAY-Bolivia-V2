@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"content="width=device-width, initial-scale=1.0">
+    <title>YUYAY Bolivia - Conociendo nuestro pasado</title>
+    <link rel="icon"type="image/png" href="imagenes/icono.png">
+    <link rel="stylesheet"href="index.css">
+</head>
+<body>
+<!-- ========================================================= -->
+<!-- ENCABEZADO                                                -->
+<!-- ========================================================= -->
+<header class="header">
+    <div class="titulo-principal">
+        YUYAY BOLIVIA
+    </div>
+</header>
+<!-- ========================================================= -->
+<!-- BARRA SUPERIOR                                            -->
+<!-- ========================================================= -->
+<nav class="barra-opciones">
+    <button onclick="abrirBuscar()">
+        🔎 Buscar
+    </button>
+    <button onclick="abrirSecreto()">
+        💀 
+    </button>
+    <button onclick="toggleMusicMenu()">
+        🎵 Música
+    </button>
+    <button onclick="abrirAjustes()">
+        ⚙️ Ajustes
+    </button>
+    <button onclick="abrirCreditos()">
+        👥 Créditos
+    </button>
+    <button onclick="abrirAyuda()">
+        ❓ Ayuda
+    </button>
+    <a href="https://www.google.com/"><button>❌ Salir</button></a>
+</nav>
+<!-- ========================================================= -->
+<!-- CONTENEDOR PRINCIPAL                                      -->
+<!-- ========================================================= -->
+<main class="contenedor">
+    <!-- ===================================================== -->
+    <!-- MENÚ LATERAL                                          -->
+    <!-- ===================================================== -->
+    <aside class="menu-lateral">
+        <h2>📚 EXPLORAR</h2>
+        <button onclick="mostrarSeccion('presidentes')">
+            👑 Presidentes
+        </button>
+        <button onclick="mostrarSeccion('departamentos')">
+            🗺️ Departamentos
+        </button>
+        <button onclick="mostrarSeccion('personajes')">
+            👤 Personajes
+        </button>
+        <button onclick="mostrarSeccion('acontecimientos')">
+            ⚔️ Acontecimientos
+        </button>
+        <button onclick="mostrarSeccion('culturas')">
+            🏺 Culturas
+        </button>
+        <button onclick="mostrarSeccion('himnos')">
+            🎵 Himnos y Canciones
+        </button>
+        <a href="PaginasUtilizadas/Aprendo cultura/Inicio.html" class="boton-concurso">
+    <span class="icono-concurso">🎤</span>
+    <span class="texto-concurso">
+        PARTICIPA EN NUESTRO
+        <strong>REALITY SHOW</strong>
+    </span>
+    <span class="flecha-concurso">▶</span>
+</a>
+    </aside>
+    <!-- ===================================================== -->
+    <!-- CONTENIDO                                             -->
+    <!-- ===================================================== -->
+    <section class="contenido">
+        <!-- ================================================= -->
+        <!-- INICIO                                             -->
+        <!-- ================================================= -->
+        <div
+            id="inicio"
+            class="pantalla activa"
+        >
+            <div class="presentacion">
+                <div class="bandera">
+                    Hola,bienvenid@s a:
+                </div>
+                <h1>
+                    YUYAY BOLIVIA
+                </h1>
+                <h2>
+                    Conociendo nuestro pasado
+                </h2>
+                <p>
+                    Descubre nuestra historia,
+                    personajes, culturas,
+                    acontecimientos y mucho más.
+                </p>
+                <button
+                    class="boton-comenzar"
+                    onclick="mostrarSeccion('presidentes')"
+                >
+                    COMENZAR
+                </button>
+            </div>
+        </div>
+        <!-- ================================================= -->
+        <!-- PRESIDENTES                                        -->
+        <!-- ================================================= -->
+        <div
+            id="presidentes"
+            class="pantalla"
+        >
+            <h1>
+                👑 Presidentes de Bolivia
+            </h1>
+            <p>
+                Busca y conoce información sobre
+                los presidentes que formaron parte
+                de la historia de Bolivia.
+            </p>
+            <div class="buscador-seccion">
+                <input
+                    type="text"
+                    id="buscarPresidentes"
+                    placeholder="🔎 Buscar presidente..."
+                    oninput="buscarPresidentes()"
+                >
+            </div>
+            <div
+                id="resultadosPresidentes"
+                class="resultados-seccion"
+            >
+                <p class="mensaje-seccion">
+                    👑 Escribe el nombre de un presidente
+                    para comenzar.
+                </p>
+            </div>
+        </div>
+        <!-- ================================================= -->
+        <!-- DEPARTAMENTOS                                      -->
+        <!-- ================================================= -->
+        <div
+            id="departamentos"
+            class="pantalla"
+        >
+            <h1>
+                🗺️ Departamentos de Bolivia
+            </h1>
+            <p>
+                Conoce información sobre los
+                nueve departamentos de Bolivia.
+            </p>
+            <div class="buscador-seccion">
+                <input
+                    type="text"
+                    id="buscarDepartamentos"
+                    placeholder="🔎 Buscar departamento..."
+                    oninput="buscarDepartamentos()"
+                >
+            </div>
+            <div
+                id="resultadosDepartamentos"
+                class="resultados-seccion"
+            >
+                <p class="mensaje-seccion">
+                    🗺️ Escribe el nombre de un departamento
+                    para comenzar.
+                </p>
+            </div>
+        </div>
+        <!-- ================================================= -->
+        <!-- PERSONAJES                                         -->
+        <!-- ================================================= -->
+        <div
+            id="personajes"
+            class="pantalla"
+        >
+            <h1>
+                👤 Personajes importantes
+            </h1>
+            <p>
+                Conoce personajes importantes
+                de la historia de Bolivia.
+            </p>
+            <div class="buscador-seccion">
+                <input
+                    type="text"
+                    id="buscarPersonajes"
+                    placeholder="🔎 Buscar personaje..."
+                    oninput="buscarPersonajes()"
+                >
+            </div>
+            <div
+                id="resultadosPersonajes"
+                class="resultados-seccion"
+            >
+                <p class="mensaje-seccion">
+                    👤 Escribe el nombre de un personaje
+                    para comenzar.
+                </p>
+            </div>
+        </div>
+        <!-- ================================================= -->
+        <!-- ACONTECIMIENTOS                                    -->
+        <!-- ================================================= -->
+        <div
+            id="acontecimientos"
+            class="pantalla"
+        >
+            <h1>
+                ⚔️ Acontecimientos históricos
+            </h1>
+            <p>
+                Explora acontecimientos importantes
+                de la historia de Bolivia.
+            </p>
+            <div class="buscador-seccion">
+                <input
+                    type="text"
+                    id="buscarAcontecimientos"
+                    placeholder="🔎 Buscar acontecimiento..."
+                    oninput="buscarAcontecimientos()"
+                >
+            </div>
+            <div
+                id="resultadosAcontecimientos"
+                class="resultados-seccion"
+            >
+                <p class="mensaje-seccion">
+                    ⚔️ Escribe algo para comenzar.
+                </p>
+            </div>
+        </div>
+        <!-- ================================================= -->
+        <!-- CULTURAS                                           -->
+        <!-- ================================================= -->
+        <div
+            id="culturas"
+            class="pantalla"
+        >
+            <h1>
+                🏺 Culturas de Bolivia
+            </h1>
+            <p>
+                Descubre las culturas que forman
+                parte de la historia de Bolivia.
+            </p>
+            <div class="buscador-seccion">
+                <input
+                    type="text"
+                    id="buscarCulturas"
+                    placeholder="🔎 Buscar cultura..."
+                    oninput="buscarCulturas()"
+                >
+            </div>
+            <div
+                id="resultadosCulturas"
+                class="resultados-seccion"
+            >
+                <p class="mensaje-seccion">
+                    🏺 Escribe el nombre de una cultura
+                    para comenzar.
+                </p>
+            </div>
+        </div>
+        <!-- ================================================= -->
+        <!-- HIMNOS                                              -->
+        <!-- ================================================= -->
+        <div
+            id="himnos"
+            class="pantalla"
+        >
+            <h1>
+                🎵 Himnos y Canciones de Bolivia
+            </h1>
+            <p>
+                Busca y conoce diferentes himnos
+                y canciones relacionadas con Bolivia.
+            </p>
+            <div class="contenedor-himnos">
+                <div class="buscador-himnos">
+                    <input
+                        type="text"
+                        id="buscarHimno"
+                        placeholder="🔎 Escribe el nombre de un himno o canción..."
+                        oninput="buscarHimno()"
+                    >
+                </div>
+                <div
+                    id="resultadosHimnos"
+                    class="resultados-himnos"
+                >
+                    <p class="mensaje-himnos">
+                        🔎 Escribe algo para comenzar
+                        a buscar.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- ========================================================= -->
+<!-- MENÚ DE MÚSICA                                           -->
+<!-- ========================================================= -->
+<div
+    id="musicMenu"
+    class="ventana-musica"
+>
+
+    <h3>
+        🎵 Música
+    </h3>
+
+
+    <button
+        onclick="playMusic('Assets/musica/Musicarelajante.mp3')"
+    >
+        🎵 Tema 1
+    </button>
+
+
+    <button
+        onclick="playMusic('Assets/musica/Big the cat Lo -fi.mp3')"
+    >
+        🎵 Tema 2
+    </button>
+
+
+    <button
+        onclick="playMusic('Assets/musica/The path of the force.mp3')"
+    >
+        🎵 Tema 3
+    </button>
+
+
+    <button
+        onclick="playMusic('Assets/musica/Motivacion extrema.mp3')"
+    >
+        🎵 Tema 4
+    </button>
+
+
+    <button
+        onclick="playMusic('Assets/musica/Across the Stars.mp3')"
+    >
+        🎵 Tema 5
+    </button>
+
+
+    <button
+        onclick="playMusic('Assets/musica/Binary Sunset.mp3')"
+    >
+        🎵 Tema 6
+    </button>
+
+
+    <div class="controles-musica">
+
+        <button onclick="togglePlay()">
+            ⏯️
+        </button>
+
+        <button onclick="toggleMute()">
+            🔇
+        </button>
+
+    </div>
+
+
+    <p>
+        🎧 Tu música
+    </p>
+
+
+    <input
+        type="file"
+        id="userMusic"
+        accept="audio/*"
+        onchange="loadUserMusic()"
+    >
+
+</div>
+
+
+<!-- ========================================================= -->
+<!-- AUDIOS                                                     -->
+<!-- ========================================================= -->
+
+<audio id="audioAyuda" controls></audio>
+
+<audio
+    id="audioPlayer"
+></audio>
+
+
+<audio
+    id="audioHimno"
+></audio>
+
+
+<!-- ========================================================= -->
+<!-- BUSCADOR GENERAL                                          -->
+<!-- ========================================================= -->
+
+<div
+    id="buscar"
+    class="modal"
+>
+
+    <div class="modal-contenido">
+
+        <button
+            class="cerrar"
+            onclick="cerrarVentanas()"
+        >
+            ✕
+        </button>
+
+
+        <h2>
+            🔎 Buscar
+        </h2>
+
+
+        <input
+            type="text"
+            id="buscador"
+            placeholder="Escribe lo que deseas buscar..."
+            oninput="realizarBusqueda()"
+        >
+
+
+        <p>
+            Busca información sobre presidentes,
+            personajes, departamentos, culturas
+            y acontecimientos.
+        </p>
+
+
+        <div id="resultadosBusqueda"></div>
+
+    </div>
+
+</div>
+
+
+<!-- ========================================================= -->
+<!-- AJUSTES                                                    -->
+<!-- ========================================================= -->
+
+<div
+    id="ajustes"
+    class="modal"
+>
+
+    <div class="modal-contenido">
+
+        <button
+            class="cerrar"
+            onclick="cerrarVentanas()"
+        >
+            ✕
+        </button>
+
+
+        <h2>
+            ⚙️ Ajustes
+        </h2>
+
+
+        <label>
+            Tamaño de texto
+        </label>
+
+
+        <select
+            onchange="cambiarTexto(this.value)"
+        >
+
+            <option value="normal">
+                Normal
+            </option>
+
+            <option value="grande">
+                Grande
+            </option>
+
+            <option value="muy-grande">
+                Muy grande
+            </option>
+
+        </select>
+
+
+        <label class="opcion-audio">
+            🔊 Audio de consultas
+        </label>
+
+
+        <select
+            id="audioConsultas"
+            onchange="cambiarAudioConsultas(this.value)"
+        >
+
+            <option value="activado">
+                Activado
+            </option>
+
+            <option value="desactivado">
+                Desactivado
+            </option>
+
+        </select>
+
+    </div>
+
+</div>
+
+
+<!-- ========================================================= -->
+<!-- AYUDA                                                      -->
+<!-- ========================================================= -->
+<div id="ayuda"class="modal">
+    <div class="modal-contenido modal-ayuda">
+        <button class="cerrar"onclick="cerrarVentanas()">✕</button>
+        <h2>❓ ¿Cómo utilizar YUYAY Bolivia?</h2>
+        <p class="texto-ayuda-intro">Escucha una explicación de cada opción de la página.</p>
+        <div class="lista-ayuda-audio">
+            <!-- BIENVENIDA -->
+            <div class="boton-ayuda-audio">
+                <span>🇧🇴 Bienvenido a YUYAY Bolivia</span>
+                <button onclick="reproducirAyuda('Assets/Ayuda/inicio.wav')"title="Escuchar explicación">🔊</button>
+            </div>
+            <!-- PRESIDENTES -->
+            <div class="boton-ayuda-audio">
+                <span>👑 Presidentes</span>
+                <button onclick="reproducirAyuda('Assets/Presidente.wav')"title="Escuchar explicación">🔊</button>
+            </div>
+            <!-- DEPARTAMENTOS -->
+            <div class="boton-ayuda-audio">
+                <span>🗺️ Departamentos</span>
+                <button onclick="reproducirAyuda('Assets/Ayuda/departamentos.wav')"title="Escuchar explicación">🔊</button>
+            </div>
+            <!-- PERSONAJES -->
+            <div class="boton-ayuda-audio">
+                <span>👤 Personajes</span>
+                <button onclick="reproducirAyuda('Assets/Ayuda/personajes.wav')"title="Escuchar explicación">🔊</button>
+            </div>
+            <!-- ACONTECIMIENTOS -->
+            <div class="boton-ayuda-audio">
+                <span>⚔️ Acontecimientos</span>
+                <button onclick="reproducirAyuda('Assets/Ayuda/acontecimientos.wav')"title="Escuchar explicación">🔊</button>
+            </div>
+            <!-- CULTURAS -->
+            <div class="boton-ayuda-audio">
+                <span>🏺 Culturas</span>
+                <button onclick="reproducirAyuda('Assets/Ayuda/culturas.wav')"title="Escuchar explicación">🔊</button>
+            </div>
+            <!-- HIMNOS -->
+            <div class="boton-ayuda-audio">
+                <span>🎵 Himnos y Canciones</span>
+                <button onclick="reproducirAyuda('Assets/Ayuda/himnos.wav')"title="Escuchar explicación">🔊</button>
+            </div>
+            <!-- BUSCAR -->
+            <div class="boton-ayuda-audio">
+                <span>🔎 Buscar</span>
+                <button onclick="reproducirAyuda('Assets/Ayuda/buscar.wav')"title="Escuchar explicación">🔊</button>
+            </div>
+            <!-- MÚSICA -->
+            <div class="boton-ayuda-audio">
+                <span>🎵 Música</span>
+                <button onclick="reproducirAyuda('Assets/Ayuda/musica.wav')"title="Escuchar explicación">🔊</button>
+            </div>
+            <!-- AJUSTES -->
+            <div class="boton-ayuda-audio">
+                <span>⚙️ Ajustes</span>
+                <button
+                    onclick="reproducirAyuda('Assets/Ayuda/ajustes.wav')"title="Escuchar explicación">🔊</button>
+            </div>
+        </div>
+        <!-- REPRODUCTOR DE AYUDA -->
+        <div class="reproductor-ayuda">
+            <p>🎧 Audio de ayuda</p>
+            <audio id="audioAyuda"controls></audio>
+        </div>
+    </div>
+</div>
+<!-- ========================================================= -->
+<!-- CRÉDITOS                                                    -->
+<!-- ========================================================= -->
+
+<div id="creditos"class="modal">
+    <div class="modal-contenido">
+        <button class="cerrar" onclick="cerrarVentanas()">✕</button>
+        <h2>👥 Créditos</h2>
+        <p>Creador:Roberto Misael Copa Llampaso</p>
+        <p>Proyecto:Yuyay Bolivia</p>
+        <p>Curso:2doA.</p>
+        <footer>Version 1.0</footer>
+    </div>
+
+</div>
+
+<!-- ========================================================= -->
+<!-- ARCHIVO SECRETO                                           -->
+<!-- ========================================================= -->
+
+<div
+    id="secreto"
+    class="modal"
+>
+
+    <div class="modal-contenido">
+
+        <button
+            class="cerrar"
+            onclick="cerrarVentanas()"
+        >
+            ✕
+        </button>
+
+        <h2>
+            💀 Archivo restringido
+        </h2>
+
+        <p>
+            Este archivo no se encuentra disponible
+            para el público.
+        </p>
+
+        <p>
+            Introduce la contraseña:
+        </p>
+
+        <input
+            type="password"
+            id="claveSecreta"
+            placeholder="Contraseña..."
+            onkeydown="if(event.key === 'Enter') verificarSecreto()"
+        >
+
+        <button
+            onclick="verificarSecreto()"
+            class="boton-secreto"
+        >
+            🔓 Entrar
+        </button>
+
+        <p id="mensajeSecreto"></p>
+
+    </div>
+
+</div>
+
+<!-- ========================================================= -->
+<!-- ARCHIVOS DE DATOS                                          -->
+<!-- ========================================================= -->
+
+<script src="Assets/datos/presidentes.js"></script>
+
+<script src="Assets/datos/departamentos.js"></script>
+
+<script src="Assets/datos/personajes.js"></script>
+
+<script src="Assets/datos/acontecimientos.js"></script>
+
+<script src="Assets/datos/culturas.js"></script>
+
+<script src="Assets/datos/himnos.js"></script>
+
+
+<!-- ========================================================= -->
+<!-- JAVASCRIPT PRINCIPAL                                       -->
+<!-- ========================================================= -->
+
+<script src="index.js"></script>
+
+
+</body>
+</html>
